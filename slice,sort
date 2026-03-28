@@ -1,0 +1,12 @@
+function descendingOrder(n){
+    /* 12345 -> "12345" -> ["1","2","3","4","5"]
+     -> ["5","4","3","2","1"] -> "54321" -> 54321 */
+  return parseInt(String(n).split('').sort((a,b)=>b-a).join(''));
+}
+
+function getMiddle(s) {
+  //Code goes here!    abcdef
+  const middle = s.length/2;
+    return s.length %2 !==0 ? s.charAt(Math.floor(middle)) 
+    : s.slice(middle -1,middle+1) ;
+}

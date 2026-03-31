@@ -19,3 +19,12 @@ function findOdd(A) {
     }
   }
 }
+
+function alphabetPosition(text) {
+  // smallcase -> split -> ascii -96-join ['1','2','3'...] 
+  return text.toLowerCase()
+    .split('')
+    .filter(char => char >='a' && char <='z')
+    .map(char=> char.charCodeAt(0) - 96)
+    .join(' ');
+}

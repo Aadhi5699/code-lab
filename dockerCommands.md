@@ -17,3 +17,6 @@ docker system prune      // Everything unused (containers, images, networks)
 docker inspect
 docker inspect --format='{{.State.ExitCode}}' <container> 
 docker image inspect 
+
+docker cp index.html mynginx:/usr/share/nginx/index/html/index.html
+docker exec mynginx ls /usr/share/nginx/html/

@@ -13,3 +13,7 @@ docker logs --tail 100 <containerID>
 docker container prune
 docker image prune -a
 docker system prune      // Everything unused (containers, images, networks)
+
+
+docker inspect 
+docker image inspect 

@@ -14,6 +14,6 @@ docker container prune
 docker image prune -a
 docker system prune      // Everything unused (containers, images, networks)
 
-
-docker inspect 
+docker inspect
+docker inspect --format='{{.State.ExitCode}}' <container> 
 docker image inspect 

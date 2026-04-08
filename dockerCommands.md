@@ -34,3 +34,7 @@ docker rename <oldName><newName>
 docker pause <containerID>  //(The container stays in RAM but uses 0% CPU).
 docker unpause <containerID> //(The container resumes exactly where it left off).
 
+
+docker ps -q
+docker ps -aq
+docker stop $(docker ps -q)

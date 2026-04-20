@@ -18,3 +18,21 @@ function outer() {
 
 outer();
 console.log(x); //1
+
+
+
+//2
+
+var name = "Global";
+
+(function () {
+  console.log(name); // [Function: name]
+
+  var name = "Local";
+
+  function name() {
+    console.log("Fn");
+  }
+
+  console.log(name); // Local
+})(); 

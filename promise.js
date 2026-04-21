@@ -15,3 +15,14 @@ Promise.resolve()
     return "Recovered";
   })
   .then((msg) => console.log(msg));
+
+// Promise.all for parallel
+function getUser() {
+  return Promise.resolve("User");
+}
+
+function getPosts() {
+  return Promise.resolve("Posts");
+}
+
+Promise.all([getUser(),getPosts()]).then((result)=>console.log(result));

@@ -9,14 +9,15 @@ docker logs -f <containerID> //for real time(live) logs
 docker logs --tail 100 <containerID>
 
 
-
 docker container prune
 docker image prune -a
 docker system prune      // Everything unused (containers, images, networks)
 
+
 docker inspect
 docker inspect --format='{{.State.ExitCode}}' <container> 
 docker image inspect 
+
 
 docker cp index.html mynginx:/usr/share/nginx/index/html/index.html
 docker exec mynginx ls /usr/share/nginx/html/
@@ -38,3 +39,6 @@ docker unpause <containerID> //(The container resumes exactly where it left off)
 docker ps -q
 docker ps -aq
 docker stop $(docker ps -q)
+
+
+docker exec <container_id> whoami // To check the user inside the container

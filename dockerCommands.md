@@ -5,7 +5,7 @@ docker rm <containerID> / docker rm -f <containerID>
 
 
 docker logs <containerID>
-docker logs -f <containerID> //for real time
+docker logs -f <containerID> //for real time(live) logs
 docker logs --tail 100 <containerID>
 
 

@@ -39,6 +39,21 @@ docker unpause <containerID> //(The container resumes exactly where it left off)
 docker ps -q
 docker ps -aq
 docker stop $(docker ps -q)
-
-
 docker exec <container_id> whoami // To check the user inside the container
+
+
+# 1 Create a volume
+docker run -d \
+--name pgdb \
+-e POSTGRES_PASSWORD=secret \
+-v pgdata:/var/lib/postgresql/data \
+-p 5432:5432 \
+postgres
+
+
+# 1. Create the network
+docker network create app-net
+# 2. Run Redis on the network
+docker run -d --name redis --network app-net redis
+# 3. Run Backend on the same network
+docker run -d --name backend --network app-net backend-image

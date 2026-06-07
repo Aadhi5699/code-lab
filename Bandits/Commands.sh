@@ -8,3 +8,6 @@ cat "./--spaces in this filename--"
 # Files beginning with a . are hidden. 
 #The -a flag means show all files, including hidden ones.
 ls -a
+
+#The file command examines a file and tells you what kind of data it contains.
+file ./*

@@ -20,3 +20,7 @@ find . -type f -size 1033c ! -executable
 # Strings just show human readable text, filters out the binary junk.
 sort data.txt | uniq -u
 strings data.txt | grep "=="
+
+# keep it .gz to decompress, xxd - Creating and reversing hex text.
+mv data data.gz
+gunzip data.gz

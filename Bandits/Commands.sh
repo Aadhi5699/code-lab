@@ -24,3 +24,7 @@ strings data.txt | grep "=="
 # keep it .gz to decompress, xxd - Creating and reversing hex text.
 mv data data.gz
 gunzip data.gz
+
+# r = read = 4, w = write = 2, x = execute = 1, 6 = 4 + 2 (r+w)
+# 6(owner)0(group)0(others) - 600
+chmod 600 bandit14.key

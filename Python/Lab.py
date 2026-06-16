@@ -39,3 +39,7 @@ async def main():
 
 #asyncio.run(main()) , only waits for main() to complete,the event loop shuts down.
 asyncio.run(main())
+
+
+#Restrict the event loop to a maximum of 10 concurrent operations
+semaphore = asyncio.Semaphore(10) 

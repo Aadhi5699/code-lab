@@ -1,3 +1,5 @@
+#1
+
 @app.get("/users")
 async def get_users():
     data = requests.get( # this synchronous lib block the event loop
@@ -5,6 +7,7 @@ async def get_users():
     )
     return data.json()
 
+#2
 
 import httpx
 from fastapi import FastAPI

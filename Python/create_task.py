@@ -1,3 +1,4 @@
+#1
 import asyncio
 
 async def work(n):
@@ -12,5 +13,35 @@ async def main():
 #create_task() starts execution immediately.
     await task1
     await task2
+
+asyncio.run(main())
+
+
+#2
+
+import asyncio
+
+async def task(n):
+    print(f"start-{n}")
+
+    try:
+        await asyncio.sleep(5)
+    except asyncio.CancelledError:
+        print(f"cancel-{n}")
+        raise
+
+    print(f"end-{n}")
+
+async def main():
+    t = asyncio.create_task(task(1))
+
+    await asyncio.sleep(1)
+
+    t.cancel()
+
+    try:
+        await t
+    except asyncio.CancelledError:
+        print("main-caught")
 
 asyncio.run(main())
